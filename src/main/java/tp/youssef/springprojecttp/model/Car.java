@@ -33,4 +33,8 @@ public class Car extends BaseEntity{
     @OneToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL,targetEntity = Fuel.class)
     @JoinColumn(name = "carburant_id")
     private Fuel fuel;
+
+    @OneToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL, targetEntity = Availablity.class)
+    @JoinColumn(name = "availablity_id")
+    private Availablity availablity;
 }

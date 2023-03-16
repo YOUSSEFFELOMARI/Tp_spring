@@ -6,6 +6,7 @@ import org.hibernate.annotations.GenericGenerator;
 
 import java.time.LocalDateTime;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Data
@@ -17,5 +18,5 @@ public class Availablity extends BaseEntity{
     private int availablityId;
     private LocalDateTime holidayStartDate;
     private LocalDateTime holidayEndDate;
-    private LocalDateTime weekReposDay;
+    private List<Days> weekReposDay;
 }
