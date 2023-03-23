@@ -5,5 +5,5 @@ import org.springframework.stereotype.Repository;
 import tp.youssef.springprojecttp.model.Driver;
 
 @Repository
-public interface DriverRepository extends JpaRepository<Driver,Integer> {
+public interface DriverRepository extends JpaRepository<Driver,String> {
 }

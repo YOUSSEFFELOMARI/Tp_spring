@@ -3,6 +3,7 @@ package tp.youssef.springprojecttp.model;
 import jakarta.persistence.*;
 import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.UuidGenerator;
 
 import java.time.LocalDateTime;
 import java.util.HashSet;
@@ -12,9 +13,8 @@ import java.util.Set;
 @Entity
 public class Driver extends BaseEntity{
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO,generator="native")
-    @GenericGenerator(name = "native",strategy = "native")
-    private int driverId;
+    @UuidGenerator
+    private String driverId;
     private String name;
     private String lastName;
     private String CIN;

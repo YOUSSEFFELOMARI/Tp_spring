@@ -5,5 +5,5 @@ import org.springframework.stereotype.Repository;
 import tp.youssef.springprojecttp.model.CarSticker;
 
 @Repository
-public interface CarStickerRepository extends JpaRepository<CarSticker,Integer> {
+public interface CarStickerRepository extends JpaRepository<CarSticker,String> {
 }

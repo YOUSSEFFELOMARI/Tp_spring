@@ -3,6 +3,7 @@ package tp.youssef.springprojecttp.model;
 import jakarta.persistence.*;
 import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.UuidGenerator;
 
 import java.time.LocalDateTime;
 
@@ -10,9 +11,8 @@ import java.time.LocalDateTime;
 @Entity
 public class Trip extends BaseEntity{
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO,generator="native")
-    @GenericGenerator(name = "native",strategy = "native")
-    private int tripId;
+    @UuidGenerator
+    private String tripId;
     private String start;
     private String end;
     private LocalDateTime startDate;

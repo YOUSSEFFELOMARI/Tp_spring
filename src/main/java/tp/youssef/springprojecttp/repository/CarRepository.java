@@ -7,7 +7,7 @@ import tp.youssef.springprojecttp.model.Car;
 import java.util.List;
 
 @Repository
-public interface CarRepository extends JpaRepository<Car,Integer> {
+public interface CarRepository extends JpaRepository<Car,String> {
     List<Car> findByCarName(String carName);
 
 

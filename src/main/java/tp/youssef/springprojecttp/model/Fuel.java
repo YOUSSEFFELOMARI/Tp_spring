@@ -6,15 +6,15 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.UuidGenerator;
 
 @Data
 @Entity
 public class Fuel extends BaseEntity{
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO,generator="native")
-    @GenericGenerator(name = "native",strategy = "native")
-    private int fuelId;
+    @UuidGenerator
+    private String fuelId;
     private double currentFuel;
     private double addedFuel;
     private double addedFuelPrice;

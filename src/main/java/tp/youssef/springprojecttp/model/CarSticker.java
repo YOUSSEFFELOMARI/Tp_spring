@@ -6,6 +6,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.UuidGenerator;
 
 import java.time.LocalDateTime;
 
@@ -13,8 +14,7 @@ import java.time.LocalDateTime;
 @Entity
 public class CarSticker extends BaseEntity{
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO,generator="native")
-    @GenericGenerator(name = "native",strategy = "native")
+    @UuidGenerator
     private int carStickerId;
 
     private LocalDateTime carStickerDate;

@@ -6,15 +6,15 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.UuidGenerator;
 
 @Data
 @Entity
 public class Profile extends BaseEntity{
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO,generator="native")
-    @GenericGenerator(name = "native",strategy = "native")
-    private int prfileId;
+    @UuidGenerator
+    private String prfileId;
 
     private String name;
     private String lastName;
