@@ -8,6 +8,7 @@ import tp.youssef.springprojecttp.repository.CarRepository;
 import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 
 @Service
@@ -18,8 +19,17 @@ public class CarServiceImpl implements CarService{
 
     @Override
     public List<Car> availableCars() {
-
-
         return null;
     }
+
+    @Override
+    public List<Car> getAllCars() {
+       return this.carRepository.findAll();
+    }
+
+    @Override
+    public Optional<Car> getCar(String carId){
+       return this.carRepository.findById(carId);
+    }
+
 }
