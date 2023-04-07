@@ -13,7 +13,7 @@ import org.hibernate.annotations.UuidGenerator;
 public class Fuel extends BaseEntity{
 
     @Id
-    @UuidGenerator
+    @GeneratedValue(strategy = GenerationType.UUID)
     private String fuelId;
     private double currentFuel;
     private double addedFuel;

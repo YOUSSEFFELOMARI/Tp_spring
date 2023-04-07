@@ -2,19 +2,20 @@ package tp.youssef.springprojecttp.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
-import org.hibernate.annotations.GenericGenerator;
-import org.hibernate.annotations.UuidGenerator;
+
+
+import java.util.List;
 
 @Data
 @Entity
 public class License extends BaseEntity{
 
     @Id
-    @UuidGenerator
+    @GeneratedValue(strategy = GenerationType.UUID)
     private String licenseId;
 
     @Enumerated(EnumType.STRING)
-    private Type LicenseType;
-    public enum Type{ A, B, C, D}
+    private List<LicenseType> licenseTypes;
+    public enum LicenseType{ A, B, C, D}
 
 }

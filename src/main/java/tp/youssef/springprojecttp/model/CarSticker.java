@@ -14,8 +14,8 @@ import java.time.LocalDateTime;
 @Entity
 public class CarSticker extends BaseEntity{
     @Id
-    @UuidGenerator
-    private int carStickerId;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private String carStickerId;
 
     private LocalDateTime carStickerDate;
 }

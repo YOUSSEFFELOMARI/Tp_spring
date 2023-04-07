@@ -13,7 +13,7 @@ import org.hibernate.annotations.UuidGenerator;
 public class Profile extends BaseEntity{
 
     @Id
-    @UuidGenerator
+    @GeneratedValue(strategy = GenerationType.UUID)
     private String prfileId;
 
     private String name;

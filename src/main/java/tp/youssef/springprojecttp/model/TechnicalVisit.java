@@ -9,7 +9,7 @@ import org.hibernate.annotations.UuidGenerator;
 @Entity
 public class TechnicalVisit extends BaseEntity{
     @Id
-    @UuidGenerator
+    @GeneratedValue(strategy = GenerationType.UUID)
     private String technicalVisitId;
 
     private String visitorCenter;

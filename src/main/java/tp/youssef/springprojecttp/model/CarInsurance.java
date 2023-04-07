@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 @Entity
 public class CarInsurance extends BaseEntity{
     @Id
-    @UuidGenerator
+    @GeneratedValue(strategy = GenerationType.UUID)
     private String carInsuranceId;
     private LocalDateTime activationDate;
     private LocalDateTime endDate;

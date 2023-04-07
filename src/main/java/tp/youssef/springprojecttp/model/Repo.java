@@ -12,11 +12,10 @@ import java.util.Set;
 
 @Data
 @Entity
-public class Availablity extends BaseEntity{
+public class Repo extends BaseEntity{
     @Id
-    @UuidGenerator
-    private String availablityId;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private String repoId;
     private LocalDateTime holidayStartDate;
     private LocalDateTime holidayEndDate;
-    private List<Days> weekReposDay;
 }

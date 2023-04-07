@@ -7,34 +7,31 @@ import org.hibernate.annotations.UuidGenerator;
 
 @Data
 @Entity
-public class Car extends BaseEntity{
+public class Car extends BaseEntity {
     @Id
-    @UuidGenerator
+    @GeneratedValue(strategy = GenerationType.UUID)
     private String carId;
 
     private String carName;
 
-    @OneToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL,targetEntity = GrisCard.class)
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL, targetEntity = GrisCard.class)
     @JoinColumn(name = "grisCard_d")
     private GrisCard grisCard;
 
-    @OneToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL,targetEntity = CarInsurance.class)
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL, targetEntity = CarInsurance.class)
     @JoinColumn(name = "car_insurance_id")
     private CarInsurance carInsurance;
 
-    @OneToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL,targetEntity = CarSticker.class)
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL, targetEntity = CarSticker.class)
     @JoinColumn(name = "car_sticker_id")
     private CarSticker carSticker;
 
-    @OneToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL,targetEntity = TechnicalVisit.class)
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL, targetEntity = TechnicalVisit.class)
     @JoinColumn(name = "technical_visit_id")
     private TechnicalVisit technicalVisit;
 
-    @OneToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL,targetEntity = Fuel.class)
-    @JoinColumn(name = "carburant_id")
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL, targetEntity = Fuel.class)
+    @JoinColumn(name = "fuel_id")
     private Fuel fuel;
-
-    @OneToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL, targetEntity = Availablity.class)
-    @JoinColumn(name = "availablity_id")
-    private Availablity availablity;
 }
+

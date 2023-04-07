@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 @Entity
 public class GrisCard extends BaseEntity{
     @Id
-    @UuidGenerator
+    @GeneratedValue(strategy = GenerationType.UUID)
     private String grisCardId;
 
     private LocalDateTime activationDate;

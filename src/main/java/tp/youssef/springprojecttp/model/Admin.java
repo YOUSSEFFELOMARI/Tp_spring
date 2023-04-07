@@ -9,7 +9,7 @@ import org.hibernate.annotations.UuidGenerator;
 @Entity
 public class Admin extends BaseEntity{
     @Id
-    @UuidGenerator
+    @GeneratedValue(strategy = GenerationType.UUID)
     private String adminId;
     private String name;
     private String lastName;

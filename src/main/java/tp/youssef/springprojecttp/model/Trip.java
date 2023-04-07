@@ -8,14 +8,14 @@ import java.time.LocalDateTime;
 @Entity
 public class Trip extends BaseEntity{
     @Id
-    @UuidGenerator
+    @GeneratedValue(strategy = GenerationType.UUID)
     private String tripId;
     private String start;//location
     private String end;//location
     private LocalDateTime startDate;
     private LocalDateTime endDate;
-    @Enumerated(value = EnumType.STRING)
-    private TripStatus isDone = TripStatus.LATER;
+    @Enumerated(EnumType.STRING)
+    private TripStatus isDone = TripStatus.COMPLETED;
     @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL,targetEntity = Driver.class)
     @JoinColumn(name = "driver_id")
     private Driver driver;

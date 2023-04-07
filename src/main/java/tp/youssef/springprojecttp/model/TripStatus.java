@@ -1,7 +1,7 @@
 package tp.youssef.springprojecttp.model;
 
 public enum TripStatus {
-    COMPLETE,
+    COMPLETED,
     IN_PROGRESS,
-    LATER
+
 }

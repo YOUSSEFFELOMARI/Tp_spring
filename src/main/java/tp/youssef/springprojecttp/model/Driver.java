@@ -13,14 +13,14 @@ import java.util.Set;
 @Entity
 public class Driver extends BaseEntity{
     @Id
-    @UuidGenerator
+    @GeneratedValue(strategy = GenerationType.UUID)
     private String driverId;
     private String name;
     private String lastName;
     private String CIN;
     @OneToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL, targetEntity = Availablity.class)
-    @JoinColumn(name = "availablity_id")
-    private Availablity availablity;
+    @JoinColumn(name = "repo_id")
+    private Repo repo;
     private int experience;
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL,targetEntity = License.class)
     @JoinColumn(name = "licence_id")
@@ -28,7 +28,7 @@ public class Driver extends BaseEntity{
     private LocalDateTime licenceDeliveryDate;
 
     @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL, targetEntity = Profile.class)
-    @JoinColumn(name = "prfile_id")
+    @JoinColumn(name = "profile_id")
     private Profile profile;
 
 
