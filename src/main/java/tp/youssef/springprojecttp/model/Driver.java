@@ -18,7 +18,7 @@ public class Driver extends BaseEntity{
     private String name;
     private String lastName;
     private String CIN;
-    @OneToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL, targetEntity = Availablity.class)
+    @OneToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL, targetEntity = Repo.class)
     @JoinColumn(name = "repo_id")
     private Repo repo;
     private int experience;
